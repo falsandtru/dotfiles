@@ -1,0 +1,17 @@
+[user]
+	email = falsandtru
+	name = falsandtru
+[core]
+	editor = vim -c \"set fenc=utf-8\"
+[push]
+	default = simple
+[merge]
+	ff = false
+[branch]
+	autosetuprebase = always
+[pull]
+	rebase = preserve
+
+[url "https://falsandtru@github.com/"]
+  insteadOf = git@github.com:
+  insteadOf = git://github.com/
