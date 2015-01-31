@@ -60,7 +60,7 @@ let g:neocomplcache_enable_underbar_completion = 1
 NeoBundle 'dag/vim2hs'
 NeoBundle 'eagletmt/ghcmod-vim'
 NeoBundle 'eagletmt/neco-ghc'
-NeoBundle 'eagletmt/ghcmod-vim'
+let $PATH = $PATH . ':' . expand('~/.cabal/bin')
 NeoBundle 'ujihisa/neco-ghc'
 NeoBundle 'leafgarland/typescript-vim'
 NeoBundle 'clausreinke/typescript-tools'
@@ -263,8 +263,8 @@ map t <Plug>(easymotion-tl)
 map F <Plug>(easymotion-Fl)
 map T <Plug>(easymotion-Tl)
 
-map w <Plug>(easymotion-bd-wl)
-map e <Plug>(easymotion-bd-el)
-map W <Plug>(easymotion-bd-Wl)
-map E <Plug>(easymotion-bd-El)
+map w <Plug>(easymotion-bd-w)
+map e <Plug>(easymotion-bd-e)
+map W <Plug>(easymotion-bd-W)
+map E <Plug>(easymotion-bd-E)
 
