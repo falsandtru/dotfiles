@@ -57,6 +57,7 @@ NeoBundle 'Shougo/neocomplcache'
 let g:neocomplcache_enable_at_startup = 1
 let g:neocomplcache_enable_smart_case = 1
 let g:neocomplcache_enable_underbar_completion = 1
+NeoBundle 'Townk/vim-autoclose'
 NeoBundle 'dag/vim2hs'
 NeoBundle 'eagletmt/ghcmod-vim'
 NeoBundle 'eagletmt/neco-ghc'
@@ -117,6 +118,7 @@ set helpheight=999 " ヘルプを画面いっぱいに開く
 set list           " 不可視文字を表示
 " 不可視文字の表示記号指定
 set listchars=tab:▸\ ,eol:↲,extends:❯,precedes:❮
+set nofoldenable
 
 " 全角文字をハイライト表示
 function! Zenkaku()
