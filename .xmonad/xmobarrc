@@ -1,0 +1,25 @@
+Config
+  { font = "xft:VL Gothic:size=9"
+  , bgColor = "black"
+  , fgColor = "grey"
+  , position = Top
+  , lowerOnStart = True
+  , commands =
+    [ Run StdinReader
+    , Run Network "eth0" ["-L","0","-H","1048576","--normal","green","--high","red"] 10
+    , Run Network "eth1" ["-L","0","-H","32","--normal","green","--high","red"] 10
+    , Run Cpu ["-L","3","-H","50","--normal","green","--high","red"] 10
+    , Run Memory ["-t","Mem: <usedratio>%","-L","40","-H","90","--normal","#d3d7cf","--high","#c16666"] 10
+    , Run Swap [] 10
+    , Run Com "cat" ["/proc/loadavg"] "loadavg" 10
+    , Run Com "uname" ["-s","-r"] "" 36000
+    , Run Date "%F %T %A" "date" 10
+    --, Run Battery ["-t","% "] 300
+    --, Run Com "acpi" [] "battery" 300
+    --, Run Weather "EGPF" ["-t",": C","-L","18","-H","25","--normal","green","--high","red","--low","lightblue"] 36000
+    ]
+  , sepChar = "%"
+  , alignSep = "}{"
+  , template = "%StdinReader% }{ %cpu% | %memory% - %swap% | Avg: %loadavg% | %eth0% - %eth1% | %date% | %uname%"
+  }
+
