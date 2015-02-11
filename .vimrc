@@ -57,7 +57,7 @@ NeoBundle 'Shougo/neocomplcache'
 let g:neocomplcache_enable_at_startup = 1
 let g:neocomplcache_enable_smart_case = 1
 let g:neocomplcache_enable_underbar_completion = 1
-NeoBundle 'Townk/vim-autoclose'
+NeoBundle 'jiangmiao/auto-pairs'
 NeoBundle 'dag/vim2hs'
 NeoBundle 'eagletmt/ghcmod-vim'
 NeoBundle 'eagletmt/neco-ghc'
@@ -260,15 +260,15 @@ map  N <Plug>(easymotion-prev)
 
 
 
-map f <Plug>(easymotion-fl)
-map t <Plug>(easymotion-tl)
-map F <Plug>(easymotion-Fl)
-map T <Plug>(easymotion-Tl)
-
-map w <Plug>(easymotion-wl)
-map e <Plug>(easymotion-el)
-map b <Plug>(easymotion-bl)
-map W <Plug>(easymotion-W)
-map E <Plug>(easymotion-E)
-map B <Plug>(easymotion-B)
+" map f <Plug>(easymotion-fl)
+" map t <Plug>(easymotion-tl)
+" map F <Plug>(easymotion-Fl)
+" map T <Plug>(easymotion-Tl)
+"
+" map w <Plug>(easymotion-wl)
+" map e <Plug>(easymotion-el)
+" map b <Plug>(easymotion-bl)
+" map W <Plug>(easymotion-W)
+" map E <Plug>(easymotion-E)
+" map B <Plug>(easymotion-B)
 
