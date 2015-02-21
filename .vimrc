@@ -50,9 +50,20 @@ autocmd VimEnter,Colorscheme * :hi IndentGuidesOdd ctermbg=0
 autocmd VimEnter,Colorscheme * :hi IndentGuidesEven ctermbg=9
 "let g:indent_guides_color_change_percent = 30
 NeoBundle 'junegunn/vim-easy-align'
+" Start interactive EasyAlign in visual mode (e.g. vip<Enter>)
+vmap <Enter> <Plug>(EasyAlign)
+" Start interactive EasyAlign for a motion/text object (e.g. <Leader>aip)
+"nmap <Leader>a <Plug>(EasyAlign)"
 NeoBundle 'tomtom/tcomment_vim'
 " assistant
 NeoBundle 'scrooloose/syntastic'
+set statusline+=%#warningmsg#
+set statusline+=%{SyntasticStatuslineFlag()}
+set statusline+=%*
+let g:syntastic_always_populate_loc_list = 1
+let g:syntastic_auto_loc_list = 1
+let g:syntastic_check_on_open = 1
+let g:syntastic_check_on_wq = 0
 NeoBundle 'Shougo/neocomplcache'
 let g:neocomplcache_enable_at_startup = 1
 let g:neocomplcache_enable_smart_case = 1
@@ -66,6 +77,8 @@ NeoBundle 'ujihisa/neco-ghc'
 NeoBundle 'leafgarland/typescript-vim'
 NeoBundle 'clausreinke/typescript-tools'
 NeoBundle 'mattn/emmet-vim'
+NeoBundle 'thinca/vim-quickrun'
+"let g:quickrun_config={'*': {'split': 'vertical'}}
 
 
 """"""""""""""""""""""""""""""
@@ -112,7 +125,7 @@ set cursorline     " カーソル行の背景色を変える
 hi clear CursorLine
 "set cursorcolumn   " カーソル位置のカラムの背景色を変える
 set laststatus=2   " ステータス行を常に表示
-"set cmdheight=2    " メッセージ表示欄を2行確保
+set cmdheight=2    " メッセージ表示欄を2行確保
 set showmatch      " 対応する括弧を強調表示
 set helpheight=999 " ヘルプを画面いっぱいに開く
 set list           " 不可視文字を表示
@@ -143,7 +156,7 @@ endif
 
 set backspace=indent,eol,start " Backspaceキーの影響範囲に制限を設けない
 "set whichwrap=b,s,h,l,<,>,[,]  " 行頭行末の左右移動で行をまたぐ
-set scrolloff=8                " 上下8行の視界を確保
+set scrolloff=3                " 上下3行の視界を確保
 set sidescrolloff=16           " 左右スクロール時の視界を確保
 set sidescroll=1               " 左右スクロールは一文字づつ行う
 
