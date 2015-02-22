@@ -19,10 +19,10 @@ NeoBundleFetch 'Shougo/neobundle.vim'
 NeoBundle 'Shougo/vimproc.vim', {
 \ 'build' : {
 \     'windows' : 'tools\\update-dll-mingw',
-\     'cygwin' : 'make -f make_cygwin.mak',
-\     'mac' : 'make -f make_mac.mak',
-\     'linux' : 'make',
-\     'unix' : 'gmake',
+\     'cygwin'  : 'make -f make_cygwin.mak',
+\     'mac'     : 'make -f make_mac.mak',
+\     'linux'   : 'make',
+\     'unix'    : 'gmake',
 \    },
 \ }
 " scheme
@@ -70,6 +70,8 @@ let g:neocomplcache_enable_smart_case = 1
 let g:neocomplcache_enable_underbar_completion = 1
 NeoBundle 'jiangmiao/auto-pairs'
 NeoBundle 'dag/vim2hs'
+let g:haskell_conceal              = 0
+let g:haskell_conceal_enumerations = 0
 NeoBundle 'eagletmt/ghcmod-vim'
 NeoBundle 'eagletmt/neco-ghc'
 let $PATH = $PATH . ':' . expand('~/.cabal/bin')
