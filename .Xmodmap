@@ -1,17 +1,2 @@
-keysym Menu = Caps_Lock
 keysym Caps_Lock = Control_L
-keysym Hiragana_Katakana = Zenkaku_Hankaku Zenkaku_Hankaku
-keysym Zenkaku_Hankaku = Escape
-!keysym Num_Lock = Pointer_EnableKeys
-
-keycode 100 = Down Right Up Left
-keycode 79 = Alt_L Alt_L 7 7
-keycode 80 = Shift_L Shift_L 8 8
-keycode 81 = Control_L Control_L 9 9
-keycode 83 = Pointer_Button1 Pointer_Button1 4 4
-keycode 84 = Pointer_Button2 Pointer_Button2 5 5
-keycode 85 = Pointer_Button3 Pointer_Button3 6 6
-keycode 87 = Alt_L Alt_L 1 1
-keycode 88 = Shift_L Shift_L 2 2
-keycode 89 = Control_L Control_L 3 3
 
