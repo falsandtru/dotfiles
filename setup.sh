@@ -1,5 +1,7 @@
 #!/bin/bash
 
+LANG=C xdg-user-dirs-gtk-update
+
 apt-get   install -y aptitude
 aptitude  install -y gnome
 aptitude  purge   -y unity
