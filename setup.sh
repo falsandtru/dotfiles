@@ -1,5 +1,12 @@
 #!/bin/bash
 
+apt-get   install -y aptitude
+aptitude  install -y gnome
+aptitude  purge   -y unity
+aptitude  install -y xmonad xmobar suckless-tools
+aptitude  install -y git tig
+aptitude  install -y vim terminator
+
 SCRIPT_DIR=$(dirname $0)
 
 ln -sf $SCRIPT_DIR/.profile ~/.profile
