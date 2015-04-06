@@ -1,20 +1,29 @@
 "---------------------------
 " Start Neobundle Settings.
 "---------------------------
-" mkdir -p ~/.vim/bundle
-" git clone https://github.com/Shougo/neobundle.vim ~/.vim/bundle/neobundle.vim
-" git clone https://github.com/Shougo/vimproc ~/.vim/bundle/vimproc
-"set runtimepath+=~/.vim/
-"runtime! userautoload/*.vim
 
-" bundleで管理するディレクトリを指定
-set runtimepath+=~/.vim/bundle/neobundle.vim/
+" Note: Skip initialization for vim-tiny or vim-small.
+ if !1 | finish | endif
 
-" Required:
-call neobundle#begin(expand('~/.vim/bundle/'))
+ if has('vim_starting')
+   if &compatible
+     set nocompatible               " Be iMproved
+   endif
 
-" neobundle自体をneobundleで管理
-NeoBundleFetch 'Shougo/neobundle.vim'
+   " Required:
+   set runtimepath+=~/.vim/bundle/neobundle.vim/
+ endif
+
+ " Required:
+ call neobundle#begin(expand('~/.vim/bundle/'))
+
+ " Let NeoBundle manage NeoBundle
+ " Required:
+ NeoBundleFetch 'Shougo/neobundle.vim'
+
+ " My Bundles here:
+ " Refer to |:NeoBundle-examples|.
+ " Note: You don't set neobundle setting in .gvimrc!
 
 NeoBundle 'Shougo/vimproc.vim', {
 \ 'build' : {
