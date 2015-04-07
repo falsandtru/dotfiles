@@ -7,6 +7,7 @@ import XMonad.Config.Desktop(desktopLayoutModifiers)
 import XMonad.Layout.OneBig
 import XMonad.Layout.Magnifier
 import XMonad.Layout.Spacing
+import XMonad.Layout.NoBorders
 
 main :: IO()
 main = do
@@ -25,7 +26,7 @@ main = do
                 , focusedBorderColor = "#cd8b00"
                 }
   where
-    myLayout = smartSpacing 0 $ desktopLayoutModifiers (magnifiercz' 1.85 $ Mirror one ||| Full)
+    myLayout = smartSpacing 0 $ desktopLayoutModifiers (magnifiercz' 1.85 $ Mirror one ||| noBorders Full)
       where
         one     = OneBig (7/10) (7/10)
         --tiled   = Tall nmaster delta ratio

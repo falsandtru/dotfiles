@@ -1,5 +1,5 @@
 Config
-  { font = "xft:VL Gothic:size=9"
+  { font = "xft:VL Gothic:size=11"
   , bgColor = "black"
   , fgColor = "grey"
   , position = Top
