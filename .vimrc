@@ -92,18 +92,6 @@ NeoBundle 'thinca/vim-quickrun'
 "let g:quickrun_config={'*': {'split': 'vertical'}}
 
 
-""""""""""""""""""""""""""""""
-" 最後のカーソル位置を復元する
-""""""""""""""""""""""""""""""
-if has("autocmd")
-    autocmd BufReadPost *
-    \ if line("'\"") > 0 && line ("'\"") <= line("$") |
-    \   exe "normal! g'\"" |
-    \ endif
-endif
-""""""""""""""""""""""""""""""
-
-
 call neobundle#end()
 
 " Required:
@@ -170,6 +158,9 @@ set backspace=indent,eol,start " Backspaceキーの影響範囲に制限を設�
 set scrolloff=3                " 上下3行の視界を確保
 set sidescrolloff=16           " 左右スクロール時の視界を確保
 set sidescroll=1               " 左右スクロールは一文字づつ行う
+if has("autocmd")              " スクロール位置を復元
+  au BufReadPost * if line("'\"") > 1 && line("'\"") <= line("$") | exe "normal! g'\"" | endif
+endif
 
 " ファイル処理関連の設定
 
