@@ -1,15 +1,12 @@
 #!/bin/bash
 
-read -s pass
-
 LANG=C xdg-user-dirs-gtk-update
 
-echo $pass | sudo apt-get  install -y aptitude
-echo $pass | sudo aptitude install -y gnome
-echo $pass | sudo aptitude purge   -y unity gnome-session-flashback
-echo $pass | sudo aptitude install -y xmonad xmobar suckless-tools
-echo $pass | sudo aptitude install -y git tig
-echo $pass | sudo aptitude install -y vim terminator
+sudo apt-get  install -y aptitude
+sudo aptitude install -y gnome-shell gnome-tweak-tool gnomw-shell-extensions
+sudo aptitude purge   -y unity ubuntu-desktop gnome-games
+#sudo aptitude install -y xmonad xmobar suckless-tools
+sudo aptitude install -y git tig
 
 mkdir -p ~/.vim/bundle
 git clone https://github.com/Shougo/neobundle.vim ~/.vim/bundle/neobundle.vim
