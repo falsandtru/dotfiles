@@ -47,6 +47,9 @@ NeoBundle 'tpope/vim-fugitive'
 NeoBundle 'gregsexton/gitv'
 NeoBundle 'idanarye/vim-merginal'
 NeoBundle 'AndrewRadev/gapply.vim'
+NeoBundle 'terryma/vim-expand-region'
+vmap v <Plug>(expand_region_expand)
+vmap <C-v> <Plug>(expand_region_shrink)
 " manipulator
 NeoBundle 'Lokaltog/vim-easymotion'
 " format
@@ -162,6 +165,19 @@ set sidescroll=1               " 左右スクロールは一文字づつ行う
 if has("autocmd")              " スクロール位置を復元
   au BufReadPost * if line("'\"") > 1 && line("'\"") <= line("$") | exe "normal! g'\"" | endif
 endif
+vnoremap <silent> y y`]        " コピペを行の下へ追加する
+vnoremap <silent> p p`]
+nnoremap <silent> p p`]
+" ペーストでレジスタを上書きしない
+function! RestoreRegister()
+  let @" = s:restore_reg
+  return ''
+endfunction
+function! s:Repl()
+  let s:restore_reg = @"
+  return "p@=RestoreRegister()\<cr>"
+endfunction
+vmap <silent> <expr> p <sid>Repl()
 
 " ファイル処理関連の設定
 
@@ -170,6 +186,10 @@ set hidden     " 保存されていないファイルがあるときでも別の
 set autoread   " 外部でファイルに変更がされた場合は読みなおす
 "set nobackup   " ファイル保存時にバックアップファイルを作らない
 "set noswapfile " ファイル編集中にスワップファイルを作らない
+" /something -> cs -> replacement -> Esc -> n.n.n.
+vnoremap <silent> s //e<C-r>=&selection=='exclusive'?'+1':''<CR><CR>
+    \:<C-u>call histdel('search',-1)<Bar>let @/=histget('search',-1)<CR>gv
+omap s :normal vs<CR>
 
 " 検索/置換の設定
 
